@@ -1,0 +1,20 @@
+group 'net.ipsoft'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://repository.mulesoft.org/releases/"
+    }
+}
+
+dependencies {
+    compile group: 'org.mozilla', name: 'rhino', version: '1.7.7.1'
+    compile(group: 'com.sun.phobos', name: 'phobos-js', version: '0.6.2') {
+        transitive = false
+    }
+}
